@@ -1,0 +1,47 @@
+@use'../base/variables' as v;
+@use'../base/mixins' as m;
+.servicios {
+    width: 100%;
+    .servicios_grid5 {
+        margin-top: 6rem;
+        @include m.grid (1, 2rem);
+        @include m.tablet {
+            @include m.grid (5, 2rem);
+        }
+    }
+    .servicios_grid4 {
+        @include m.grid (1, 2rem);
+        @include m.tablet {
+            margin-top: 4rem;
+            @include m.grid (4, 2rem);
+        }
+    }
+}
+
+.servicios_icono {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+}
+
+.icono_img {
+    background-color: v.$colornav;
+    border-radius: 45%;
+    width: 10rem;
+    img {
+        filter: invert(100%);
+    }
+}
+
+.servicio_nombre {
+    h3 {
+        margin: 1.5rem;
+    }
+    font-family: v.$fuente;
+    font-size: 2rem;
+}

@@ -1,0 +1,103 @@
+@use'../base/mixins' as m;
+@use'../base/variables' as v;
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.contenedor {
+    width: 120rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.subtitulo {
+    font-family: v.$fuente;
+    font-size: 3rem;
+}
+
+.subtitulo-1 {
+    font-family: v.$fuente;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.titulo {
+    font-family: v.$fuente;
+    font-size: 5rem;
+}
+
+.separador {
+    max-width: 120rem;
+    margin: 0 auto;
+    height: 1px;
+    background-color: v.$colornav;
+    margin-top: 4rem;
+}
+
+img,
+picture {
+    display: block;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    justify-content: end;
+    padding: 0 2rem 0 0;
+    position: sticky;
+    top: 80%;
+    z-index: 10;
+}
+
+.to-top {
+    width: 4.5rem;
+    transition: 2s;
+    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 2s;
+        background-color: v.$colornav;
+        img {
+            filter: invert(100%);
+        }
+    }
+}
+
+.visto {
+    @include m.visto
+}
+
+.oculto {
+    @include m.oculto;
+    visibility: hidden;
+}
+
+.menu-ver {
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 8rem;
+    img {
+        filter: invert(100%);
+    }
+    @include m.tablet {
+        display: none;
+    }
+}
+
+.menu-oculto {
+    display: none;
+}
